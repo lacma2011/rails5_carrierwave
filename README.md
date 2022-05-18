@@ -1,8 +1,12 @@
-# Rails 5 with CarrierWave and Ads database
+# Rails 5 with CarrierWave and basic page for ads database
 
 
 Build docker image when running for the first time:
 >docker-compose build
+
+
+Seed DB for first time running:
+>docker-compose run rails rake db:create
 
 Startup:
 >docker-compose up
