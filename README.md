@@ -13,7 +13,9 @@ Now you can view the application at:
 http://192.168.4.100:3000/
 
 
-Note that it uses a fixed IP for rails server. To remove that, modify docker-entrypoint.sh and re-build image
+## Fixed IP
 
-docker-entrypoint.sh:
+Rails server launches with a fixed IP. To remove that, modify docker-entrypoint-rails.sh and re-build image
+
+docker-entrypoint-rails.sh:
 >rm -f tmp/pids/server.pid && bundle exec rails server -b $HOST
