@@ -1,24 +1,19 @@
-# README
+# Rails 5 with CarrierWave and Ads database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Build docker image when running for the first time:
+>docker-compose build
 
-* Ruby version
+Startup:
+>docker-compose up
 
-* System dependencies
 
-* Configuration
+Now you can view the application at:
 
-* Database creation
+http://192.168.4.100:3000/
 
-* Database initialization
 
-* How to run the test suite
+Note that it uses a fixed IP for rails server. To remove that, modify docker-entrypoint.sh and re-build image
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+docker-entrypoint.sh:
+>rm -f tmp/pids/server.pid && bundle exec rails server -b $HOST
