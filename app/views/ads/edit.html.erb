@@ -1,0 +1,9 @@
+<h1>Edit ad #<%= @ad.id %></h1>
+
+<form action="/ads/edit/<%= @ad.id %>" method="post">
+    <input type="text" name="title" value="<%= @ad.title %>" />
+    <input type="submit">
+</form>
+
+<a href="/">Go back</a>
+
