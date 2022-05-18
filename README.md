@@ -5,11 +5,14 @@ Build docker image when running for the first time:
 >docker-compose build
 
 
-Seed DB for first time running:
->docker-compose run rails rake db:create
-
 Startup:
 >docker-compose up
+
+
+Seed DB if this container is running for first time:
+>docker exec $(docker ps -q -f "name=rails") bundle exec rake db:seed
+
+(disregard ruby warnings)
 
 
 Now you can view the application at:
